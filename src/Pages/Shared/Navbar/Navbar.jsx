@@ -48,7 +48,7 @@ const Navbar = () => {
             {menuItems}
           </ul>
         </div>
-        <Link to="/" className="btn btn-ghost text-xl">
+        <Link to="/" className="btn btn-ghost text-accent text-3xl text-bold">
           Hasan Dental Care
         </Link>
       </div>
