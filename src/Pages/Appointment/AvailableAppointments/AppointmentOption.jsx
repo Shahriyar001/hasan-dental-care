@@ -1,5 +1,11 @@
-const AppointmentOption = ({ appointmentOption }) => {
+const AppointmentOption = ({ appointmentOption, setTreatment }) => {
   const { name, slots } = appointmentOption;
+
+  const handleClick = () => {
+    setTreatment(appointmentOption);
+    document.getElementById("booking-modal").showModal();
+  };
+
   return (
     <div className="card shadow-xl">
       <div className="card-body my-6 text-center">
@@ -9,7 +15,13 @@ const AppointmentOption = ({ appointmentOption }) => {
           {slots.length} {slots.length > 1 ? "spaces" : "space"} available
         </p>
         <div className="card-actions justify-center">
-          <button className="btn btn-primary text-white">
+          {/* <button className="btn btn-primary text-white">
+            Book Appointment
+          </button> */}
+          <button
+            className="btn  btn-primary text-white"
+            onClick={() => handleClick()}
+          >
             Book Appointment
           </button>
         </div>
