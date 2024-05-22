@@ -1,17 +1,51 @@
-const BookingModal = ({ treatment }) => {
-  const { name } = treatment;
+import { format } from "date-fns";
+
+const BookingModal = ({ treatment, selectedDate }) => {
+  const { name, slots } = treatment;
+  const date = format(selectedDate, "PP");
   return (
     <>
       <dialog id="booking-modal" className="modal">
         <div className="modal-box">
           <form method="dialog">
-            {/* if there is a button in form, it will close the modal */}
             <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
               ✕
             </button>
           </form>
           <h3 className="font-bold text-lg">{name}</h3>
-          <p className="py-4">Press ESC key or click on ✕ button to close</p>
+          <form className=" grid grid-cols-1 gap-3 mt-10">
+            <input
+              type="text"
+              disabled
+              value={date}
+              className="input input-bordered "
+            />
+            <select className="select select-bordered w-full">
+              {slots.map((slot) => (
+                <option value={slot}>{slot}</option>
+              ))}
+            </select>
+            <input
+              type="text"
+              placeholder="Type here"
+              className="input input-bordered "
+            />
+            <input
+              type="text"
+              placeholder="Type here"
+              className="input input-bordered "
+            />
+            <input
+              type="text"
+              placeholder="Type here"
+              className="input input-bordered "
+            />
+            <input
+              className="btn btn-accent w-full"
+              type="text"
+              value="submit"
+            />
+          </form>
         </div>
       </dialog>
     </>
