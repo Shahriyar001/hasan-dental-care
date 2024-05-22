@@ -19,6 +19,7 @@ const AppointmentOption = ({ appointmentOption, setTreatment }) => {
             Book Appointment
           </button> */}
           <button
+            disabled={slots.length === 0}
             className="btn  btn-primary text-white"
             onClick={() => handleClick()}
           >
