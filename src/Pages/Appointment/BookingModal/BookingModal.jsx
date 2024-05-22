@@ -1,6 +1,6 @@
 import { format } from "date-fns";
 
-const BookingModal = ({ treatment, selectedDate }) => {
+const BookingModal = ({ treatment, setTreatment, selectedDate }) => {
   const { name, slots } = treatment;
   const date = format(selectedDate, "PP");
 
@@ -8,11 +8,21 @@ const BookingModal = ({ treatment, selectedDate }) => {
     event.preventDefault();
     const form = event.target;
     const slot = form.slot.value;
-    const name = form.name.value;
+    const patientname = form.name.value;
     const email = form.email.value;
     const phone = form.phone.value;
 
-    console.log(date, slot, name, email, phone);
+    const booking = {
+      appointmentDate: date,
+      treatment: name,
+      patient: patientname,
+      slot,
+      email,
+      phone,
+    };
+
+    console.log(booking);
+    setTreatment(null);
   };
 
   return (
@@ -36,8 +46,10 @@ const BookingModal = ({ treatment, selectedDate }) => {
               className="input input-bordered "
             />
             <select name="slot" className="select select-bordered w-full">
-              {slots.map((slot) => (
-                <option value={slot}>{slot}</option>
+              {slots.map((slot, i) => (
+                <option key={i} value={slot}>
+                  {slot}
+                </option>
               ))}
             </select>
             <input
@@ -60,7 +72,7 @@ const BookingModal = ({ treatment, selectedDate }) => {
             />
             <input
               className="btn btn-accent w-full"
-              type="text"
+              type="submit"
               value="submit"
             />
           </form>
