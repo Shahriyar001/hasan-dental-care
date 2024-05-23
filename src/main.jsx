@@ -4,9 +4,12 @@ import App from "./App.jsx";
 import "./index.css";
 // import "react-day-picker/style.css";
 import "react-day-picker/dist/style.css";
+import AuthProvider from "./Context/AuthProvider.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
+    <AuthProvider>
+      <App />
+    </AuthProvider>
   </React.StrictMode>
 );
