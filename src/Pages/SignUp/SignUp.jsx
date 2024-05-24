@@ -2,7 +2,6 @@ import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider";
-import { Result } from "postcss";
 
 const SignUp = () => {
   const {

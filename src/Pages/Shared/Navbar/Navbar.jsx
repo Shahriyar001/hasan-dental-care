@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../Context/AuthProvider";
 
 const Navbar = () => {
+  const { user } = useContext(AuthContext);
   const menuItems = (
     <>
       <li>
@@ -15,9 +18,15 @@ const Navbar = () => {
       <li>
         <Link to="/">Review</Link>
       </li>
-      <li>
-        <Link to="/login">Login</Link>
-      </li>
+      {user?.uid ? (
+        <li>
+          <Link to="/">Sign out</Link>
+        </li>
+      ) : (
+        <li>
+          <Link to="/login">Login</Link>
+        </li>
+      )}
     </>
   );
 
