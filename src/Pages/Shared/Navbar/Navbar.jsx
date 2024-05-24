@@ -3,7 +3,14 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Context/AuthProvider";
 
 const Navbar = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((err) => console.log(err));
+  };
+
   const menuItems = (
     <>
       <li>
@@ -19,9 +26,14 @@ const Navbar = () => {
         <Link to="/">Review</Link>
       </li>
       {user?.uid ? (
-        <li>
-          <Link to="/">Sign out</Link>
-        </li>
+        <>
+          <li>
+            <Link to="/dashboard">Dashboard</Link>
+          </li>
+          <li>
+            <button onClick={handleLogOut}>Sign out</button>
+          </li>
+        </>
       ) : (
         <li>
           <Link to="/login">Login</Link>
