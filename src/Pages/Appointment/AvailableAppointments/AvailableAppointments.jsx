@@ -15,17 +15,8 @@ const AvailableAppointments = ({ selectedDate }) => {
       const data = await res.json();
       return data;
     },
-    // () =>
-    //   fetch("http://localhost:5000/appointmentOptions").then((res) =>
-    //     res.json()
-    //   ),
   });
 
-  // useEffect(() => {
-  //   fetch("http://localhost:5000/appointmentOptions")
-  //     .then((res) => res.json())
-  //     .then((data) => setAppointmentOptions(data));
-  // }, []);
   return (
     <section className="mt-16">
       <p className="text-center text-secondary font-bold">

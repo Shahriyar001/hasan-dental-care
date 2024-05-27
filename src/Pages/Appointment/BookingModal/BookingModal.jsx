@@ -1,9 +1,12 @@
 import { format } from "date-fns";
+import { useContext } from "react";
+import { AuthContext } from "../../../Context/AuthProvider";
+import toast from "react-hot-toast";
 
 const BookingModal = ({ treatment, setTreatment, selectedDate }) => {
   const { name, slots } = treatment;
   const date = format(selectedDate, "PP");
-
+  const { user } = useContext(AuthContext);
   const handleBooking = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -21,8 +24,22 @@ const BookingModal = ({ treatment, setTreatment, selectedDate }) => {
       phone,
     };
 
+    fetch("http://localhost:5000/bookings", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(booking),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.acknowledged) {
+          setTreatment(null);
+          toast.success("Booking confirmed");
+        }
+      });
     console.log(booking);
-    setTreatment(null);
   };
 
   return (
@@ -54,6 +71,8 @@ const BookingModal = ({ treatment, setTreatment, selectedDate }) => {
             </select>
             <input
               name="name"
+              defaultValue={user?.displayName}
+              disabled
               type="text"
               placeholder="Your Name"
               className="input input-bordered "
@@ -61,12 +80,15 @@ const BookingModal = ({ treatment, setTreatment, selectedDate }) => {
             <input
               name="email"
               type="email"
+              defaultValue={user?.email}
+              disabled
               placeholder="Email Address"
               className="input input-bordered "
             />
             <input
               name="phone"
               type="text"
+              required
               placeholder="Phone Number"
               className="input input-bordered "
             />
