@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider";
+import toast from "react-hot-toast";
 
 const Login = () => {
   const {
@@ -12,6 +13,7 @@ const Login = () => {
 
   const { signIn } = useContext(AuthContext);
   const [loginError, setLoginError] = useState("");
+
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -32,12 +34,16 @@ const Login = () => {
       });
   };
 
+  const handleClick = () => {
+    toast.error("OOPS, Login manually");
+  };
+
   return (
     <div className="h-[800px flex justify-center items-center">
       <div className="w-96 p-7">
         <h2 className="text-xl text-center">Login</h2>
         <form onSubmit={handleSubmit(handleLogin)}>
-          <label className="form-control w-full max-w-xs">
+          <label className="form-control w-full max-w-xs my-2">
             <span className="label-text">Email</span>
             <input
               type="email"
@@ -48,7 +54,7 @@ const Login = () => {
               <p className="text-red-600">{errors.email.message}</p>
             )}
           </label>
-          <label className="form-control w-full max-w-xs">
+          <label className="form-control w-full  my-2 max-w-xs">
             <span className="label-text">Password</span>
             <input
               type="password"
@@ -67,7 +73,7 @@ const Login = () => {
             <span className="label-text">Forget Password?</span>
           </label>
           <input
-            className="btn btn-accent w-full"
+            className="btn btn-accent  my-2 w-full"
             value="LOGIN"
             type="submit"
           />
@@ -85,7 +91,12 @@ const Login = () => {
           </Link>
         </p>
         <div className="divider">OR</div>
-        <button className="btn btn-outline w-full">CONTINUE WITH GOOGLE</button>
+        <button
+          onClick={() => handleClick()}
+          className="btn btn-outline w-full"
+        >
+          CONTINUE WITH GOOGLE
+        </button>
       </div>
     </div>
   );

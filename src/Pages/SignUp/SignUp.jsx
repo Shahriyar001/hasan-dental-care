@@ -38,6 +38,10 @@ const SignUp = () => {
       });
   };
 
+  const handleClick = () => {
+    toast.error("OOPS, Sign Up manually");
+  };
+
   const saveUser = (name, email, password) => {
     const user = { name, email, password };
     console.log(user);
@@ -60,7 +64,7 @@ const SignUp = () => {
       <div className="w-96 p-7">
         <h2 className="text-xl text-center">Sign Up</h2>
         <form onSubmit={handleSubmit(handleSignUp)}>
-          <label className="form-control w-full max-w-xs">
+          <label className="form-control w-full my-2 max-w-xs">
             <span className="label-text">Your Name</span>
             <input
               type="text"
@@ -73,7 +77,7 @@ const SignUp = () => {
               <p className="text-red-600">{errors.name.message}</p>
             )}
           </label>
-          <label className="form-control w-full max-w-xs">
+          <label className="form-control  my-2 w-full max-w-xs">
             <span className="label-text">Email</span>
             <input
               type="email"
@@ -86,7 +90,7 @@ const SignUp = () => {
               <p className="text-red-600">{errors.email.message}</p>
             )}
           </label>
-          <label className="form-control w-full max-w-xs">
+          <label className="form-control my-2 w-full max-w-xs">
             <span className="label-text">Password</span>
             <input
               type="password"
@@ -119,7 +123,12 @@ const SignUp = () => {
           </Link>
         </p>
         <div className="divider">OR</div>
-        <button className="btn btn-outline w-full">CONTINUE WITH GOOGLE</button>
+        <button
+          onClick={() => handleClick()}
+          className="btn btn-outline w-full"
+        >
+          CONTINUE WITH GOOGLE
+        </button>
       </div>
     </div>
   );
