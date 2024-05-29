@@ -28,13 +28,30 @@ const SignUp = () => {
         };
         updateUser(userInfo)
           .then(() => {
-            navigate("/");
+            saveUser(data.name, data.email, data.password);
           })
           .catch((err) => console.log(err));
       })
       .catch((error) => {
         setSignUpError(error.message);
         console.log(error);
+      });
+  };
+
+  const saveUser = (name, email, password) => {
+    const user = { name, email, password };
+    console.log(user);
+    fetch("http://localhost:5000/users", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(user),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("data", data);
+        navigate("/");
       });
   };
 
@@ -77,7 +94,8 @@ const SignUp = () => {
                 required: "Password is required",
                 minLength: {
                   value: 6,
-                  message: " Password must be 6 characters long",
+                  message:
+                    " Password must be strong and at least 6 characters long.",
                 },
               })}
               className="input input-bordered w-full max-w-xs"
