@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Context/AuthProvider";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -11,14 +12,27 @@ const Navbar = () => {
       .catch((err) => console.log(err));
   };
 
+  const handlewarn = () => {
+    toast.error("Please Login first");
+  };
+
   const menuItems = (
     <>
       <li>
         <Link to="/">Home</Link>
       </li>
-      <li>
-        <Link to="/appointment">Appointment</Link>
-      </li>
+      {user?.uid ? (
+        <>
+          <li>
+            <Link to="/appointment">Appointment</Link>
+          </li>
+        </>
+      ) : (
+        <li>
+          <button onClick={() => handlewarn()}>Appointment.</button>
+        </li>
+      )}
+
       <li>
         <Link to="/">About</Link>
       </li>
