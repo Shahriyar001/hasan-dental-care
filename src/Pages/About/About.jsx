@@ -1,5 +1,11 @@
+import Dentistry from "./dentistry/Dentistry";
+
 const About = () => {
-  return <div>thsi is about page</div>;
+  return (
+    <div className="ml-6">
+      <Dentistry />
+    </div>
+  );
 };
 
 export default About;
