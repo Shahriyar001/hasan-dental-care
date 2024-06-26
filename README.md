@@ -11,3 +11,4 @@ to start in localhost
 ```
 npm run dev
 ```
+the application will run in localhost5173
