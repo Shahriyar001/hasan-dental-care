@@ -13,7 +13,7 @@ const OralHealth = () => {
           "url(https://static.vecteezy.com/system/resources/previews/036/595/008/non_2x/ai-generated-dental-clinic-advertisment-background-with-copy-space-free-photo.jpg)",
       }}
     >
-      <div className="hero-overlay bg-amber-200 bg-opacity-20"></div>
+      <div className="hero-overlay bg-amber-200 bg-opacity-30"></div>
 
       <div className="hero-content text-neutral-content text-center">
         <div className="">
@@ -23,7 +23,7 @@ const OralHealth = () => {
                 src="https://dtdental.wpenginepowered.com/wp-content/uploads/2016/11/img3.png"
                 className="lg:w-1/2 3/4 rounded-lg"
               />
-              <div className="">
+              <div className="text-left lg:ml-5">
                 <h1 className="text-5xl text-zinc-700 font-bold">
                   Dental Health-Current Research
                 </h1>
@@ -35,7 +35,9 @@ const OralHealth = () => {
                   overall well-being, aiming to improve preventive care and
                   treatment outcomes
                 </p>
-                <PrimaryButton>Get Started</PrimaryButton>
+                <PrimaryButton className="">
+                  <p className="text-zinc-700">Get Started</p>
+                </PrimaryButton>
               </div>
             </div>
           </div>
