@@ -1,4 +1,5 @@
 import DentalImplants from "./DentalImplants/DentalImplants";
+import ImplantsDentistry from "./ImplantsDentistry/ImplantsDentistry";
 import MouthWash from "./Mouthwash/MouthWash";
 import Dentistry from "./dentistry/Dentistry";
 import OralHealth from "./oralHealth/OralHealth";
@@ -10,6 +11,7 @@ const About = () => {
       <OralHealth />
       <MouthWash />
       <DentalImplants />
+      <ImplantsDentistry />
     </div>
   );
 };
