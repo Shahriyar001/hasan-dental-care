@@ -11,6 +11,7 @@ const Appointment = () => {
         setSelectedDate={setSelectedDate}
       ></AppointmentBanner>
       <AvailableAppointments
+        className="m-2"
         selectedDate={selectedDate}
       ></AvailableAppointments>
     </div>

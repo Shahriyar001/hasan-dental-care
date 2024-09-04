@@ -9,9 +9,9 @@ const Banner = () => {
         <div>
           <h1 className="text-5xl font-bold">Your New Smile Starts Here</h1>
           <p className="py-6">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi.
+            Experience exceptional dental care with our expert team. From cavity
+            fillings to teeth whitening, we prioritize your comfort and deliver
+            bright, healthy smiles.
           </p>
           <PrimaryButton>Get Started</PrimaryButton>
         </div>

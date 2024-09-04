@@ -9,21 +9,21 @@ const Services = () => {
       id: 1,
       name: "Floride Treatment",
       description:
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis, animi laboriosam cum ab ",
+        "Protect your teeth with professional fluoride treatments to strengthen enamel and prevent tooth decay effectively.",
       img: fluoride,
     },
     {
       id: 2,
       name: "Cavity Filling",
       description:
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis, animi laborios",
+        "Restore your smile with pain-free cavity filling services using safe, durable, and aesthetic dental materials.",
       img: cavity,
     },
     {
       id: 3,
       name: "Teeth Whitening",
       description:
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis, animi laboriosam !",
+        "Brighten your smile with our advanced teeth whitening treatment, removing stains and enhancing your confidence.",
       img: whitening,
     },
   ];

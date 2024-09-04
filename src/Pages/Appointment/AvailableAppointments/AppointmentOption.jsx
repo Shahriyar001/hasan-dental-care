@@ -1,12 +1,13 @@
 import { useContext } from "react";
 import { AuthContext } from "../../../Context/AuthProvider";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 // import { Navigate } from "react-router-dom";
 
 const AppointmentOption = ({ appointmentOption, setTreatment }) => {
   const { name, slots } = appointmentOption;
   const { user } = useContext(AuthContext);
+  const location = useLocation();
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -24,7 +25,7 @@ const AppointmentOption = ({ appointmentOption, setTreatment }) => {
         confirmButtonText: "Login page!",
       }).then((result) => {
         if (result.isConfirmed) {
-          navigate("/login");
+          navigate("/login", { state: { from: location } });
         }
       });
     }
