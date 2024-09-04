@@ -21,17 +21,17 @@ const Navbar = () => {
       <li>
         <Link to="/">Home</Link>
       </li>
-      {user?.uid ? (
-        <>
-          <li>
-            <Link to="/appointment">Appointment</Link>
-          </li>
-        </>
+      {/* {user?.uid ? (
+        <> */}
+      <li>
+        <Link to="/appointment">Appointment</Link>
+      </li>
+      {/* </>
       ) : (
         <li>
           <button onClick={() => handlewarn()}>Appointment.</button>
         </li>
-      )}
+      )} */}
 
       <li>
         <Link to="/about">About</Link>
@@ -49,9 +49,16 @@ const Navbar = () => {
           </li>
         </>
       ) : (
-        <li>
-          <Link to="/login">Login</Link>
-        </li>
+        <>
+          <div className="avatar online">
+            <li>
+              <Link onClick={() => handlewarn()}>Dashboard</Link>
+            </li>
+          </div>
+          <li>
+            <Link to="/login">Login</Link>
+          </li>
+        </>
       )}
     </>
   );

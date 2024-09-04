@@ -1,9 +1,33 @@
+import { useContext } from "react";
+import { AuthContext } from "../../../Context/AuthProvider";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
+// import { Navigate } from "react-router-dom";
+
 const AppointmentOption = ({ appointmentOption, setTreatment }) => {
   const { name, slots } = appointmentOption;
+  const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleClick = () => {
-    setTreatment(appointmentOption);
-    document.getElementById("booking-modal").showModal();
+    if (user && user?.email) {
+      setTreatment(appointmentOption);
+      document.getElementById("booking-modal").showModal();
+    } else {
+      Swal.fire({
+        title: "please login or signup first",
+        text: "To book an appointment, you have to login first!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Login page!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          navigate("/login");
+        }
+      });
+    }
   };
 
   return (

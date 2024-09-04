@@ -34,8 +34,9 @@ const DashboardLayout = () => {
           <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
             {/* Sidebar content here */}
             <li>
-              <Link to="/dashboard">My Appointments</Link>
+              <Link to="/dashboard">State</Link>
             </li>
+
             {isAdmin && (
               <>
                 <li>
@@ -46,6 +47,15 @@ const DashboardLayout = () => {
                 </li>
               </>
             )}
+            <li>
+              <Link to="/dashboard">My Appointments</Link>
+            </li>
+            <li>
+              <Link to="/dashboard">Home</Link>
+            </li>
+            <li>
+              <Link to="/appointment">Book Appointment</Link>
+            </li>
           </ul>
         </div>
       </div>

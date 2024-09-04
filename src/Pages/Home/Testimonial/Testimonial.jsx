@@ -1,34 +1,34 @@
 import quote from "../../../assets/icons/quote.svg";
-import people1 from "../../../assets/images/people1.png";
-import people2 from "../../../assets/images/people2.png";
-import people3 from "../../../assets/images/people3.png";
+import people1 from "../../../assets/images/Nazrul.jpg";
+import people2 from "../../../assets/images/robiullah.jpg";
+import people3 from "../../../assets/images/jamal.jpg";
 import Review from "./Review";
 
 const Testimonial = () => {
   const reviews = [
     {
       _id: 1,
-      name: "Winson Herry",
+      name: "Nazrul Islam Nayeem",
       img: people1,
       review:
-        "It is a long established fact that by the readable content of a lot layout. The point of using Lorem a more-or-less normal distribu to using Content here, content",
-      location: "California",
+        "Amazing orthodontic treatment! My teeth are now perfectly aligned. The dentist explained every step, making the process comfortable and smooth. Highly recommend for anyone needing braces or aligners.",
+      location: "Uttor Adda",
     },
     {
       _id: 2,
-      name: "Winson Herry",
+      name: "MD Robi Ullah",
       img: people2,
       review:
-        "It is a long established fact that by the readable content of a lot layout. The point of using Lorem a more-or-less normal distribu to using Content here, content",
-      location: "California",
+        "Had cosmetic work and teeth cleaning done here. My smile looks fantastic, and my teeth feel so clean! Professional staff, state-of-the-art equipment. I couldn’t be happier with the results!",
+      location: "Barera, Jolom",
     },
     {
       _id: 3,
-      name: "Winson Herry",
+      name: "MD Jamal Hosaain",
       img: people3,
       review:
-        "It is a long established fact that by the readable content of a lot layout. The point of using Lorem a more-or-less normal distribu to using Content here, content",
-      location: "California",
+        "Wonderful experience for my kids! The pediatric dental care is top-notch. Gentle, patient, and effective in preventing cavities. My children now love going to the dentist!",
+      location: "Beoline",
     },
   ];
 
