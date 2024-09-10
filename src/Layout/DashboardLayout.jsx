@@ -50,6 +50,7 @@ const DashboardLayout = () => {
             <li>
               <Link to="/dashboard/appointment">My Appointments</Link>
             </li>
+            <div className="divider"></div>
             <li>
               <Link to="/dashboard">Home</Link>
             </li>
