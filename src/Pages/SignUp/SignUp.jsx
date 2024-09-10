@@ -45,7 +45,7 @@ const SignUp = () => {
   const saveUser = (name, email, password) => {
     const user = { name, email, password };
     console.log(user);
-    fetch("http://localhost:5000/users", {
+    fetch("https://hasan-dentalcare-server.vercel.app/users", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -24,7 +24,7 @@ const BookingModal = ({ treatment, setTreatment, selectedDate, refetch }) => {
       phone,
     };
 
-    fetch("http://localhost:5000/bookings", {
+    fetch("https://hasan-dentalcare-server.vercel.app/bookings", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

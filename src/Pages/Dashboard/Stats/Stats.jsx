@@ -19,7 +19,7 @@ const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 
 const Stats = () => {
   const { user } = useContext(AuthContext);
-  const url = "http://localhost:5000/admin-stats";
+  const url = "https://hasan-dentalcare-server.vercel.app/admin-stats";
 
   //   const { data: stats = {} } = useQuery({
   //     queryKey: ["admin-stats"],

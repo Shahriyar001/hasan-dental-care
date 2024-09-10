@@ -10,22 +10,22 @@ const ContactUs = () => {
           <input
             type="text"
             placeholder="+888-5485-5858"
-            className="input input-bordered  w-full max-w-xs"
+            className="input input-bordered  w-full lg:max-w-xs"
           />
           <input
             type="text"
             placeholder="shahriyar@gmail.com"
-            className="input input-bordered  w-full max-w-xs"
+            className="input input-bordered  w-full lg:max-w-xs"
           />
           <input
             type="text"
             placeholder="New Palton, Dhaka"
-            className="input input-bordered  w-full max-w-xs"
+            className="input input-bordered  w-full lg:max-w-xs"
           />
         </div>
         <div className="divider divider-horizontal"></div>
-        <div className="grid grid-cols-1 lg:w-1/2 md:w-1/2 justify-items-start lg:ml-10">
-          <div className="w-3/5 my-1">
+        <div className="grid grid-cols-1 lg:w-1/2  justify-items-start lg:ml-10">
+          <div className="lg:w-3/5 w-full my-1">
             <label className="label">
               <span className="label-text"> Your Name</span>
             </label>
@@ -35,7 +35,7 @@ const ContactUs = () => {
               className="input input-bordered w-full"
             />
           </div>
-          <div className="lg:w-3/5 md:w-3/5 my-1">
+          <div className="lg:w-3/5  w-full my-1">
             <label className="label">
               <span className="label-text"> Your Email</span>
             </label>
@@ -45,7 +45,7 @@ const ContactUs = () => {
               className="input input-bordered w-full"
             />
           </div>
-          <div className="lg:w-3/5 md:w-3/5 my-1">
+          <div className="lg:w-3/5 w-full my-1">
             <label className="label">
               <span className="label-text"> Your Message</span>
             </label>
